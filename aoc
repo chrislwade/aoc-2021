@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+libx = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(libx) unless $LOAD_PATH.include?(libx)
+
+day = ARGV.shift
+
+if day.nil?
+  $stderr.puts "Usage: #{File.basename($0)} <day(1..25)>"
+  exit 1
+end
+
+day = day.to_i
+
+begin
+  require 'day%02i' % [day]
+  klass = Kernel.const_get('Day%02i' % [day])
+  klass.new('input/day%02i.txt' % [day]).display
+rescue LoadError => exception
+  puts 'Day %02i not yet implemented!' % [day]
+end
