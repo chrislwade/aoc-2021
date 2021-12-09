@@ -10,12 +10,13 @@ if day.nil?
   exit 1
 end
 
-day = day.to_i
+day  = day.to_i
+name = 'day%02i' % [day]
 
 begin
-  require 'day%02i' % [day]
-  klass = Kernel.const_get('Day%02i' % [day])
-  klass.new('input/day%02i.txt' % [day]).display
+  require name
+  klass = Kernel.const_get(name.capitalize)
+  klass.new("input/#{name}.txt").display
 rescue LoadError => exception
   puts 'Day %02i not yet implemented!' % [day]
 end
