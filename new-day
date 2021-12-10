@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'dotenv/load'
+require 'http'
+
 day = ARGV.shift
 
 if day.nil?
@@ -18,7 +21,12 @@ if [input, ruby, sample].any? {|file| File.exists?(file)}
 end
 
 File.open(input, 'w') do |file|
-  file.puts "Replace with puzzle input for day #{day}."
+  response = HTTP.cookies(session: ENV['SESSION']).get("https://adventofcode.com/2021/day/#{day.to_i}/input")
+  if response.code == 200
+    file.puts response.body.to_s
+  else
+    $stderr.puts "Could not fetch puzzle input for day #{day}."
+  end
 end
 
 File.open(ruby, 'w') do |file|
