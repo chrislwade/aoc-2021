@@ -2,8 +2,12 @@ require 'day'
 require 'matrix'
 
 class Day04 < Day
-  def self.expected
+  def self.sample
     {puzzle1: 4512, puzzle2: 1924}
+  end
+
+  def self.expected
+    {puzzle1: 23177, puzzle2: 6804}
   end
 
   def display

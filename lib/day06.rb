@@ -1,8 +1,12 @@
 require 'day'
 
 class Day06 < Day
-  def self.expected
+  def self.sample
     {puzzle1: 5934, puzzle2: 26984457539}
+  end
+
+  def self.expected
+    {puzzle1: 346063, puzzle2: 1572358335990}
   end
 
   def display
@@ -14,20 +18,20 @@ class Day06 < Day
   end
 
   def puzzle1
+    self.fish = lines.first.split(',').map(&:to_i).tally
     80.times { simulate! }
     fish.values.sum
   end
 
   def puzzle2
+    self.fish = lines.first.split(',').map(&:to_i).tally
     256.times { simulate! }
     fish.values.sum
   end
 
   protected
 
-  def fish
-    @fish ||= lines.first.split(',').map(&:to_i).tally
-  end
+  attr_accessor :fish
 
   def simulate!
     newborns = fish[0]

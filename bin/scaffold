@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+
+require 'dotenv/load'
+require 'http'
+
+root = File.expand_path('../../', __FILE__)
+
+day = ARGV.shift
+
+if day.nil?
+  $stderr.puts "Usage: #{File.basename($0)} <day(1..25)>"
+  exit 1
+end
+
+day = '%02i' % [day.to_i]
+
+input  = File.join(root, "input/day#{day}.txt")
+sample = File.join(root, "spec/fixtures/day#{day}.txt")
+ruby   = File.join(root, "lib/day#{day}.rb")
+
+if [input, sample, ruby].any? {|file| File.exists?(file)}
+  $stderr.puts "Day #{day} already implemented!"
+  exit 1
+end
+
+  if ENV['ADVENT_SESSION'].nil?
+    File.open(input, 'w') do |file|
+      file.puts "Replace with puzzle input for day #{day}."
+    end
+    puts "Wrote scaffold #{input}."
+    puts "**NOTE**: YOu must still copy the puzzle input data into this file."
+  else
+    response = HTTP.cookies(session: ENV['ADVENT_SESSION']).get("https://adventofcode.com/2021/day/#{day.to_i}/input")
+    if response.code == 200
+      File.open(input, 'w') do |file|
+        file.puts response.body.to_s
+      end
+      puts "Downloaded puzzle input and wrote #{input}."
+    else
+      $stderr.puts "Could not fetch puzzle input for day #{day}:"
+      $stderr.puts response.body.to_s
+      exit 1
+    end
+  end
+end
+
+File.open(sample, 'w') do |file|
+  file.puts "Replace with sample input for day #{day}."
+end
+puts "Wrote sample #{sample}."
+puts "**NOTE**: You must still copy the sample data into this file."
+
+File.open(ruby, 'w') do |file|
+  file.puts <<~EOF
+    require 'day'
+
+    class Day#{day} < Day
+      def self.sample
+        {puzzle1: :skipped, puzzle2: :skipped}
+      end
+
+      def self.expected
+        {puzzle1: :skipped, puzzle2: :skipped}
+      end
+
+      def display
+        puts "--- Day #{day}: Puzzle Name ---"
+        puts "What is the puzzle 1 result?"
+        puts "- Puzzle 1: \#{puzzle1}"
+        puts "What is the puzzle 2 result?"
+        puts "- Puzzle 2: \#{puzzle2}"
+      end
+
+      def puzzle1
+        raise 'Day #{day} puzzle 1 not yet implemented!'
+      end
+
+      def puzzle2
+        raise 'Day #{day} puzzle 2 not yet implemented!'
+      end
+    end
+  EOF
+end
+puts "Wrote scaffold #{ruby}."

@@ -1,8 +1,12 @@
 require 'day'
 
 class Day07 < Day
-  def self.expected
+  def self.sample
     {puzzle1: 37, puzzle2: 168}
+  end
+
+  def self.expected
+    {puzzle1: 329389, puzzle2: 86397080}
   end
 
   def display

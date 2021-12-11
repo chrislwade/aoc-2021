@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-libx = File.expand_path("../lib", __FILE__)
+root = File.expand_path('../../', __FILE__)
+libx = File.join(root, 'lib')
 $LOAD_PATH.unshift(libx) unless $LOAD_PATH.include?(libx)
 
 day = ARGV.shift
@@ -16,7 +17,7 @@ name = 'day%02i' % [day]
 begin
   require name
   klass = Kernel.const_get(name.capitalize)
-  klass.new("input/#{name}.txt").display
+  klass.new(File.join(root, "input/#{name}.txt")).display
 rescue LoadError => exception
   puts 'Day %02i not yet implemented!' % [day]
 end
