@@ -23,24 +23,23 @@ if [input, sample, ruby].any? {|file| File.exists?(file)}
   exit 1
 end
 
-  if ENV['ADVENT_SESSION'].nil?
+if ENV['ADVENT_SESSION'].nil?
+  File.open(input, 'w') do |file|
+    file.puts "Replace with puzzle input for day #{day}."
+  end
+  puts "Wrote scaffold #{input}."
+  puts "**NOTE**: YOu must still copy the puzzle input data into this file."
+else
+  response = HTTP.cookies(session: ENV['ADVENT_SESSION']).get("https://adventofcode.com/2021/day/#{day.to_i}/input")
+  if response.code == 200
     File.open(input, 'w') do |file|
-      file.puts "Replace with puzzle input for day #{day}."
+      file.puts response.body.to_s
     end
-    puts "Wrote scaffold #{input}."
-    puts "**NOTE**: YOu must still copy the puzzle input data into this file."
+    puts "Downloaded puzzle input and wrote #{input}."
   else
-    response = HTTP.cookies(session: ENV['ADVENT_SESSION']).get("https://adventofcode.com/2021/day/#{day.to_i}/input")
-    if response.code == 200
-      File.open(input, 'w') do |file|
-        file.puts response.body.to_s
-      end
-      puts "Downloaded puzzle input and wrote #{input}."
-    else
-      $stderr.puts "Could not fetch puzzle input for day #{day}:"
-      $stderr.puts response.body.to_s
-      exit 1
-    end
+    $stderr.puts "Could not fetch puzzle input for day #{day}:"
+    $stderr.puts response.body.to_s
+    exit 1
   end
 end
 
