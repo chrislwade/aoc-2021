@@ -66,8 +66,8 @@ File.open(ruby, 'w') do |file|
         puts "--- Day #{day}: Puzzle Name ---"
         puts "What is the puzzle 1 result?"
         puts "- Puzzle 1: \#{puzzle1}"
-        puts "What is the puzzle 2 result?"
-        puts "- Puzzle 2: \#{puzzle2}"
+        # puts "What is the puzzle 2 result?"
+        # puts "- Puzzle 2: \#{puzzle2}"
       end
 
       def puzzle1

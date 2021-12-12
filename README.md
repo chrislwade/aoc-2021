@@ -16,11 +16,14 @@ Ruby developers. I'm open to suggestions and improvements!
 
 ## Credits
 
-- [John Dugan](https://github.com/jdugan): I "stole" his README layout. Because
-  I am horrible at documentation!
-- [aucinc123](https://github.com/aucinc123): I borrowed his
-  [solution for Day 8](https://github.com/aucinc123/AdventOfCode-2021/blob/master/AdventOfCode/SevenSegmentPuzzle.cs),
-  Part 2. Because my brain just wasn't finding a solution.
+- [John Dugan][jd]: I "stole" his README layout. Because I am horrible at
+  documentation!
+- [aucinc123][auc]: I borrowed his [solution for Day 8, Part 2][auc-day8].
+  Because my brain just wasn't finding a solution.
+- [GeeksforGeeks][gfg]: Because I haven't used DFS since college.
+- [Matt Rix][mr]: I borrowed his [solution for Day 12, Part 2][mr-day12].
+  Because I haven't used DFS since college and was hitting a wall with adapting
+  a single algorithm to allow revisiting.
 
 
 ## Getting Started
@@ -122,8 +125,15 @@ To execute the tests run the following:
 
 ```
 $ rspec
-........................................
+................................................
 
-Finished in 1.59 seconds (files took 0.24563 seconds to load)
-40 examples, 0 failures
+Finished in 5.09 seconds (files took 0.34763 seconds to load)
+48 examples, 0 failures
 ```
+
+[jd]: https://github.com/jdugan
+[auc]: https://github.com/aucinc123
+[auc-day8]: https://github.com/aucinc123/AdventOfCode-2021/blob/master/AdventOfCode/SevenSegmentPuzzle.cs
+[gfg]: https://www.geeksforgeeks.org/find-paths-given-source-destination/
+[mr]: https://github.com/MattRix
+[mr-day12]: https://gist.github.com/MattRix/6f0c1f289e4d93aa6dc22ad012257bf9
