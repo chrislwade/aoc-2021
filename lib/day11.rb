@@ -13,7 +13,7 @@ class Day11 < Day
     puts "--- Day 11: Dumbo Octopus ---"
     puts "How many total flashes are there after 100 steps?"
     puts "- Puzzle 1: #{puzzle1}"
-    puts "What is the puzzle 2 result?"
+    puts "What is the first step during which all octopuses flash?"
     puts "- Puzzle 2: #{puzzle2}"
   end
 
