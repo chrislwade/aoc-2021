@@ -6,7 +6,7 @@ class Day11 < Day
   end
 
   def self.expected
-    {puzzle1: 1700, puzzle2: :skipped}
+    {puzzle1: 1700, puzzle2: 273}
   end
 
   def display
