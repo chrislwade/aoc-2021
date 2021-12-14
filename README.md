@@ -24,7 +24,7 @@ Ruby developers. I'm open to suggestions and improvements!
 - [Matt Rix][mr]: I borrowed his [solution for Day 12, Part 2][mr-day12].
   Because I haven't used DFS since college and was hitting a wall with adapting
   a single algorithm to allow revisiting.
-- [William Y. Feng][wyf]: I borrowed his solution for Day 13][wyf-day13].
+- [William Y. Feng][wyf]: I borrowed his [solution for Day 13][wyf-day13].
   Because, despite getting part 1 and 2 right, using the sample data, the
   algorithm I used (matrix flipping) didn't work because the second flip is a
   horizontal one that has more rows in the upper chunk. I could have worked
