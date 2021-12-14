@@ -115,27 +115,29 @@ How many sums are larger than the previous sum?
 The tests for each day are automatically generated using meta-programming to
 simplify the task of implementing a new day.
 
-The scaffolding implementation includes a class method to provide the expected
-sample answers from the puzzle page. These values must be fetched from the
-puzzle and provided as the value for the appropriate hash key: `puzzle1` or
-`puzzle2`.
+The scaffolding implementation includes a class method (`sample`) to provide
+the expected sample answers from the puzzle page. These values must be fetched
+from the puzzle and provided as the value for the appropriate hash key:
+`puzzle1` or `puzzle2`.
 
-The scaffolding also includes a class method to provide the expected puzzle
-answers. This is provided as a method to be able to verify outputs after
-potential refactoring. This may be redundant given the sample testing, but it
-is provided for completeness. These values must be plugged in after validating
-the solution with the AoC website.
+The scaffolding also includes a class method (`expected`) to provide the
+expected puzzle answers. This is provided as a method to be able to verify
+outputs after potential refactoring. This may be redundant given the sample
+testing, but it is provided for completeness. These values must be plugged in
+after validating the solution with the AoC website.
 
 All tests are setup to be skipped until expected values are provided.
+Additionally, the new day's tests are focused until the values for `sample` and
+`expected` are all filled in.
 
 To execute the tests run the following:
 
 ```
 $ rspec
-....................................................
+........................................................
 
-Finished in 5.11 seconds (files took 0.34694 seconds to load)
-52 examples, 0 failures
+Finished in 5.04 seconds (files took 0.32525 seconds to load)
+56 examples, 0 failures
 ```
 
 [jd]: https://github.com/jdugan

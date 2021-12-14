@@ -1,17 +1,17 @@
+def puzzle(filename)
+  File.join(File.expand_path('../../input/', __FILE__), filename)
+end
+
+def skip?(value)
+  if value == :skipped
+    skip 'no test value provided'
+  end
+end
+
 (1..25).map {|day| 'day%02i' % [day]}.each do |day|
   begin
     require day
     klass = Kernel.const_get(day.capitalize)
-
-    def puzzle(filename)
-      File.join(File.expand_path('../../input/', __FILE__), filename)
-    end
-
-    def skip?(value)
-      if value == :skipped
-        skip 'no test value provided'
-      end
-    end
 
     RSpec.describe klass, focus: klass.focus do
       context 'with the sample file' do
@@ -46,7 +46,7 @@
         end
       end
     end
-  rescue LoadError => exception
+  rescue LoadError
     # no-op, day isn't implemented yet
   end
 end

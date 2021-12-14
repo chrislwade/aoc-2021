@@ -2,7 +2,7 @@ class Day
   attr_accessor :lines
 
   def self.focus
-    false
+    (sample.values + expected.values).any? {|value| value == :skipped}
   end
 
   def initialize(filename)

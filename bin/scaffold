@@ -54,6 +54,8 @@ File.open(ruby, 'w') do |file|
     require 'day'
 
     class Day#{day} < Day
+      @@focus = true
+
       def self.sample
         {puzzle1: :skipped, puzzle2: :skipped}
       end

@@ -44,9 +44,7 @@ class Day13 < Day
 
   def puzzle2
     load!
-    while folds.any?
-      fold!
-    end
+    fold! while folds.any?
     visualize
   end
 

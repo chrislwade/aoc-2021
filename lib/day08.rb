@@ -20,7 +20,7 @@ class Day08 < Day
 
   def puzzle1
     lines.map do |line|
-      (records, outputs) = line.split(' | ')
+      (_, outputs) = line.split(' | ')
       outputs.split.select {|output| unique_digit?(output)}
     end.flatten.compact.count
   end
