@@ -24,6 +24,13 @@ Ruby developers. I'm open to suggestions and improvements!
 - [Matt Rix][mr]: I borrowed his [solution for Day 12, Part 2][mr-day12].
   Because I haven't used DFS since college and was hitting a wall with adapting
   a single algorithm to allow revisiting.
+- [William Y. Feng][wyf]: I borrowed his solution for Day 13][wyf-day13].
+  Because, despite getting part 1 and 2 right, using the sample data, the
+  algorithm I used (matrix flipping) didn't work because the second flip is a
+  horizontal one that has more rows in the upper chunk. I could have worked
+  through this but I decided to look for another approach and found this one.
+  Strangely enough, this one does not produce the correct visual output for the
+  sample data, but does for the real puzzle input.
 
 
 ## Getting Started
@@ -125,10 +132,10 @@ To execute the tests run the following:
 
 ```
 $ rspec
-................................................
+....................................................
 
-Finished in 5.09 seconds (files took 0.34763 seconds to load)
-48 examples, 0 failures
+Finished in 5.11 seconds (files took 0.34694 seconds to load)
+52 examples, 0 failures
 ```
 
 [jd]: https://github.com/jdugan
@@ -137,3 +144,5 @@ Finished in 5.09 seconds (files took 0.34763 seconds to load)
 [gfg]: https://www.geeksforgeeks.org/find-paths-given-source-destination/
 [mr]: https://github.com/MattRix
 [mr-day12]: https://gist.github.com/MattRix/6f0c1f289e4d93aa6dc22ad012257bf9
+[wyf]: https://github.com/womogenes
+[wyf-day13]: https://github.com/womogenes/AoC-2021-Solutions/blob/main/day_13/day_13_p2.py

@@ -13,7 +13,7 @@
       end
     end
 
-    RSpec.describe klass do
+    RSpec.describe klass, focus: klass.focus do
       context 'with the sample file' do
         describe :puzzle1 do
           it "should be #{klass.sample[:puzzle1]}" do
