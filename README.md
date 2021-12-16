@@ -134,10 +134,10 @@ To execute the tests run the following:
 
 ```
 $ rspec
-........................................................
+............................................................
 
-Finished in 5.04 seconds (files took 0.32525 seconds to load)
-56 examples, 0 failures
+Finished in 8.59 seconds (files took 0.34617 seconds to load)
+60 examples, 0 failures
 ```
 
 [jd]: https://github.com/jdugan

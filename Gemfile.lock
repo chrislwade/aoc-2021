@@ -20,6 +20,7 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
+    lazy_priority_queue (0.1.1)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
@@ -54,6 +55,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   http
+  lazy_priority_queue
   pry
   rspec
   rspec-file_fixtures
