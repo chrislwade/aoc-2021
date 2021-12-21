@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+root = File.expand_path('../../', __FILE__)
+libx = File.join(root, 'lib')
+$LOAD_PATH.unshift(libx) unless $LOAD_PATH.include?(libx)
+
+day = ARGV.shift
+
+if day.nil?
+  $stderr.puts "Usage: #{File.basename($0)} <day(1..25)>"
+  exit 1
+end
+
+day  = day.to_i
+name = 'day%02i' % [day]
+
+
+begin
+  require name
+  klass = Kernel.const_get(name.capitalize)
+
+  input  = klass.new(File.join(root, "input/#{name}.txt"))
+  sample = klass.new(File.join(root, "spec/fixtures/#{name}.txt"))
+
+  binding.pry
+rescue LoadError => exception
+  puts 'Day %02i not yet implemented!' % [day]
+end
