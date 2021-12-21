@@ -31,6 +31,10 @@ Ruby developers. I'm open to suggestions and improvements!
   through this but I decided to look for another approach and found this one.
   Strangely enough, this one does not produce the correct visual output for the
   sample data, but does for the real puzzle input.
+- [William Y. Feng][wyf]: I borrowed his [solution for Day 18][wyf-day18].
+  Because, once again, DFS and tree traversal aren't something I do in my day
+  job and while I mostly still follow the concepts, I'm a bit rusty on
+  specifics.
 
 
 ## Getting Started
@@ -134,10 +138,10 @@ To execute the tests run the following:
 
 ```
 $ rspec
-....................................................................
+........................................................................
 
-Finished in 10.32 seconds (files took 0.33962 seconds to load)
-68 examples, 0 failures
+Finished in 16.29 seconds (files took 0.35169 seconds to load)
+72 examples, 0 failures
 ```
 
 [jd]: https://github.com/jdugan
@@ -148,3 +152,4 @@ Finished in 10.32 seconds (files took 0.33962 seconds to load)
 [mr-day12]: https://gist.github.com/MattRix/6f0c1f289e4d93aa6dc22ad012257bf9
 [wyf]: https://github.com/womogenes
 [wyf-day13]: https://github.com/womogenes/AoC-2021-Solutions/blob/main/day_13/day_13_p2.py
+[wyf-day18]: https://github.com/womogenes/AoC-2021-Solutions/blob/main/day_13/day_18_p1.py
