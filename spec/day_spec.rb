@@ -2,6 +2,12 @@ def puzzle(filename)
   File.join(File.expand_path('../../input/', __FILE__), filename)
 end
 
+def sample(day, part = 1)
+  part = fixture("#{day}.#{part}.txt").path
+  day  = fixture("#{day}.txt").path
+  File.exists?(part) ? part : day
+end
+
 def skip?(value)
   if value == :skipped
     skip 'no test value provided'
@@ -18,14 +24,14 @@ end
         describe :puzzle1 do
           it "should be #{klass.sample[:puzzle1]}" do
             skip?(klass.sample[:puzzle1])
-            expect(klass.new(fixture("#{day}.txt").path).puzzle1).to eq(klass.sample[:puzzle1])
+            expect(klass.new(sample(day, 1)).puzzle1).to eq(klass.sample[:puzzle1])
           end
         end
 
         describe :puzzle2 do
           it "should be #{klass.sample[:puzzle2]}" do
             skip?(klass.sample[:puzzle2])
-            expect(klass.new(fixture("#{day}.txt").path).puzzle2).to eq(klass.sample[:puzzle2])
+            expect(klass.new(sample(day, 2)).puzzle2).to eq(klass.sample[:puzzle2])
           end
         end
       end

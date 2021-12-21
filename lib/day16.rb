@@ -3,7 +3,7 @@ require 'pry'
 
 class Day16 < Day
   def self.sample
-    {puzzle1: 31, puzzle2: :skipped}
+    {puzzle1: 31, puzzle2: 1}
   end
 
   def self.expected
