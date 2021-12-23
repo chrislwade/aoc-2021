@@ -16,25 +16,29 @@ Ruby developers. I'm open to suggestions and improvements!
 
 ## Credits
 
-- [John Dugan][jd]: I "stole" his README layout. Because I am horrible at
+- [John Dugan][jd]: I "stole" their README layout. Because I am horrible at
   documentation!
-- [aucinc123][auc]: I borrowed his [solution for Day 8, Part 2][auc-day8].
+- [aucinc123][auc]: I borrowed their [solution for Day 8, Part 2][auc-day8].
   Because my brain just wasn't finding a solution.
 - [GeeksforGeeks][gfg]: Because I haven't used DFS since college.
-- [Matt Rix][mr]: I borrowed his [solution for Day 12, Part 2][mr-day12].
+- [Matt Rix][mr]: I borrowed their [solution for Day 12, Part 2][mr-day12].
   Because I haven't used DFS since college and was hitting a wall with adapting
   a single algorithm to allow revisiting.
-- [William Y. Feng][wyf]: I borrowed his [solution for Day 13][wyf-day13].
+- [William Y. Feng][wyf]: I borrowed their [solution for Day 13][wyf-day13].
   Because, despite getting part 1 and 2 right, using the sample data, the
   algorithm I used (matrix flipping) didn't work because the second flip is a
   horizontal one that has more rows in the upper chunk. I could have worked
   through this but I decided to look for another approach and found this one.
   Strangely enough, this one does not produce the correct visual output for the
   sample data, but does for the real puzzle input.
-- [William Y. Feng][wyf]: I borrowed his [solution for Day 18][wyf-day18].
+- [William Y. Feng][wyf]: I borrowed their [solution for Day 18][wyf-day18].
   Because, once again, DFS and tree traversal aren't something I do in my day
   job and while I mostly still follow the concepts, I'm a bit rusty on
   specifics.
+- [msschmitt][mss]: I borrowed their [solution for Day 21, Part 2][mss-day21].
+  Because I worked out the frequencies stuff and the fact that this was really
+  just another [Lanternfish][aoc-day6] problem, but hitting a wall realizing
+  tracking the player 2 losses was important.
 
 
 ## Getting Started
@@ -138,10 +142,10 @@ To execute the tests run the following:
 
 ```
 $ rspec
-........................................................................
+................................................................................
 
-Finished in 16.29 seconds (files took 0.35169 seconds to load)
-72 examples, 0 failures
+Finished in 1 minute 47.8 seconds (files took 0.37594 seconds to load)
+80 examples, 0 failures
 ```
 
 [jd]: https://github.com/jdugan
@@ -153,3 +157,6 @@ Finished in 16.29 seconds (files took 0.35169 seconds to load)
 [wyf]: https://github.com/womogenes
 [wyf-day13]: https://github.com/womogenes/AoC-2021-Solutions/blob/main/day_13/day_13_p2.py
 [wyf-day18]: https://github.com/womogenes/AoC-2021-Solutions/blob/main/day_13/day_18_p1.py
+[mss]: https://www.reddit.com/user/msschmitt/
+[mss-day21]: https://www.reddit.com/r/adventofcode/comments/rl6p8y/comment/hpmz19t/?utm_source=share&utm_medium=web2x&context=3
+[aoc-day16]: https://adventofcode.com/2021/day/6

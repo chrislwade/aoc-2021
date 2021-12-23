@@ -65,7 +65,7 @@ class Day15 < Day
   end
 
   def pathfind
-    cost    = Hash.new {|hash, key| hash[key] = 0}
+    cost    = Hash.new(0)
     queue   = FastContainers::PriorityQueue.new(:min)
     visited = Set.new
 
